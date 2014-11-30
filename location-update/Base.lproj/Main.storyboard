@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="location_update" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,39 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-8i-VY1">
+                                <rect key="frame" x="0.0" y="320" width="600" height="280"/>
+                                <color key="backgroundColor" red="0.82169866561889648" green="1" blue="0.82171863317489624" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5uW-Qu-PBr">
+                                <rect key="frame" x="0.0" y="20" width="600" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="rng-eV-JBp"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5uW-Qu-PBr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="02Y-hx-vCg"/>
+                            <constraint firstAttribute="trailing" secondItem="cpy-8i-VY1" secondAttribute="trailing" id="3wZ-X3-pKW"/>
+                            <constraint firstAttribute="trailing" secondItem="5uW-Qu-PBr" secondAttribute="trailing" id="IGS-HZ-gDN"/>
+                            <constraint firstItem="cpy-8i-VY1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SbO-kv-AjB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cpy-8i-VY1" secondAttribute="bottom" id="gKz-k8-AQG"/>
+                            <constraint firstItem="cpy-8i-VY1" firstAttribute="top" secondItem="5uW-Qu-PBr" secondAttribute="bottom" id="gsM-hL-tLz"/>
+                            <constraint firstItem="5uW-Qu-PBr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="top" id="m4j-pM-JXt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="5uW-Qu-PBr" id="XAf-rU-0KL"/>
+                        <outlet property="textView" destination="cpy-8i-VY1" id="WFF-pG-7Jr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162" y="339"/>
         </scene>
     </scenes>
 </document>

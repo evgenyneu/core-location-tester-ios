@@ -11,15 +11,32 @@ import UIKit
 import MapKit
 
 class Log {
-  var textView: UITextView!
+  private var textView: UITextView?
 
-  init(textView: UITextView) {
+  init() {
+  }
+
+  func setTextView(textView: UITextView) {
     self.textView = textView
+  }
+
+  private func setText(text: String) {
+    if let currentTextView = textView {
+      currentTextView.text = text
+    }
+  }
+
+  private var text: String {
+    if let currentTextView = textView {
+      return currentTextView.text
+    }
+
+    return ""
   }
 
   func add(text: String){
     iiQ.main {
-      self.textView.text = "\(self.currentTime) \(text)\n\(self.textView.text)"
+      self.setText("\(self.currentTime) \(text)\n\(self.text)")
     }
   }
 
@@ -39,7 +56,7 @@ class Log {
 
   func clear() {
     iiQ.main {
-      self.textView.text = ""
+      self.setText("")
     }
   }
 }

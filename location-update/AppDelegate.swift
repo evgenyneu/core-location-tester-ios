@@ -13,6 +13,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  let iiAllControlsData = [
+    ControlData(
+      type: ControlType.accuracy,
+      defaults: SliderDefaults(value: 100, minimumValue: 0, maximumValue: 1000)
+    ),
+    ControlData(
+      type: ControlType.distanceFilter,
+      defaults: SliderDefaults(value: 10, minimumValue: 0, maximumValue: 1000)
+    )
+  ]
+
+  let log = Log()
+  let location = Location()
+
+
+  override init() {
+    super.init()
+  }
+
+
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
@@ -41,6 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
+  class var current: AppDelegate {
+    return UIApplication.sharedApplication().delegate as AppDelegate
+  }
 
 }
 

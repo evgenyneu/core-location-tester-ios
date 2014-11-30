@@ -10,13 +10,11 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, LocationDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
 
   @IBOutlet weak var textView: UITextView!
-  var locationManager: CLLocationManager!
-  var log: Log!
   var overlay: Annotation?
 
   var zoomedToLocation = false
@@ -24,38 +22,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    log = Log(textView: textView)
+    AppDelegate.current.log.setTextView(textView)
 
-    startLocationManager()
+    AppDelegate.current.location.delegate = self
+    AppDelegate.current.location.start()
     mapView.delegate = self
-  }
-
-  private func startLocationManager() {
-    locationManager = CLLocationManager()
-    locationManager.delegate = self
-
-    if locationManager.respondsToSelector(Selector("requestAlwaysAuthorization")) {
-      locationManager.requestAlwaysAuthorization()
-    }
-
-    log.add("kCLLocationAccuracyBest \(kCLLocationAccuracyBest)")
-    log.add("desiredAccuracy \(locationManager.desiredAccuracy)")
-
-    println("kCLLocationAccuracyHundredMeters \(kCLLocationAccuracyHundredMeters)")
-
-    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-
-    log.add("kCLDistanceFilterNone \(kCLDistanceFilterNone)")
-    log.add("distanceFilter \(locationManager.distanceFilter)")
-
-    locationManager.distanceFilter = 10
-
-    log.add("CLActivityTypeOther \(CLActivityType.Other.rawValue)")
-    log.add("activityType \(locationManager.activityType.rawValue)")
-
-    locationManager.activityType = CLActivityType.Fitness
-
-    locationManager.startUpdatingLocation()
   }
 
   private func updateOverlay(coordinate: CLLocationCoordinate2D) {
@@ -80,23 +51,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
   }
 }
 
-typealias CLLocationManagerDelegate_implementation = ViewController
+// LocationDelegate
+// -------------------------
 
-extension CLLocationManagerDelegate_implementation {
-  func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-    for location in locations {
-      if let currentLocation = location as? CLLocation {
-        let elapsed = NSDate().timeIntervalSinceDate(currentLocation.timestamp)
-        if elapsed > 1 {
-          log.add("LARGE elapsed \(elapsed)")
-          return
-        } // process only recent timestamps
+typealias LocationDelegate_implementation = ViewController
 
-        updateOverlay(currentLocation.coordinate)
-
-        log.add("\(Log.coordToString(currentLocation)) accuracy: \(currentLocation.horizontalAccuracy)")
-      }
-    }
+extension LocationDelegate_implementation {
+  func locationUpdated(coordinate: CLLocationCoordinate2D) {
+    updateOverlay(coordinate)
   }
 }
+
+
+
 

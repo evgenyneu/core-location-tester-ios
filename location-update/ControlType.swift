@@ -9,7 +9,6 @@
 import Foundation
 
 enum ControlType: String {
-  case duration = "Duration"
-  case damping = "Damping"
-  case initialVelocity = "Initial velocity"
+  case accuracy = "Accuracy"
+  case distanceFilter = "Distance Filter"
 }

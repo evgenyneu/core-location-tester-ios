@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -68,8 +69,23 @@
                     <view key="view" contentMode="scaleToFill" id="xvw-vJ-vnk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdB-M0-54E">
+                                <rect key="frame" x="16" y="72" width="568" height="528"/>
+                                <color key="backgroundColor" red="0.96899839880000005" green="0.79143895809999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LdB-M0-54E" firstAttribute="top" secondItem="OlB-9U-wAZ" secondAttribute="bottom" constant="8" symbolic="YES" id="1rr-kz-oOt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LdB-M0-54E" secondAttribute="trailing" id="2Lh-R3-vbA"/>
+                            <constraint firstItem="LdB-M0-54E" firstAttribute="leading" secondItem="xvw-vJ-vnk" secondAttribute="leadingMargin" id="B2d-cf-lsy"/>
+                            <constraint firstItem="nFQ-Be-sLx" firstAttribute="top" secondItem="LdB-M0-54E" secondAttribute="bottom" id="gOK-Gc-glf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sliderParentView" destination="LdB-M0-54E" id="BAi-SX-HQo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6d-hK-c7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

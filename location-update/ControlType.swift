@@ -11,4 +11,5 @@ import Foundation
 enum ControlType: String {
   case accuracy = "Accuracy"
   case distanceFilter = "Distance Filter"
+  case activityType = "Activity Type"
 }

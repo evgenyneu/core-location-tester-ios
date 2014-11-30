@@ -34,7 +34,9 @@ class Location: NSObject, CLLocationManagerDelegate {
     log.add("Start updating location")
     log.add("accuracy: \(locationManager.desiredAccuracy)")
     log.add("distance filter: \(locationManager.distanceFilter)")
-    log.add("activity type: \(locationManager.activityType)")
+
+    let activityType = iiLocationActivityType.toString(locationManager.activityType)
+    log.add("activity type: \(activityType)")
 
     locationManager.startUpdatingLocation()
   }

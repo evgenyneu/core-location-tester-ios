@@ -30,6 +30,8 @@
 		2BE8886E1A2AAD41004ECA5F /* ControlsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8886D1A2AAD41004ECA5F /* ControlsData.swift */; };
 		2BE888701A2AB57B004ECA5F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8886F1A2AB57B004ECA5F /* Location.swift */; };
 		2BE888731A2AB7C3004ECA5F /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888721A2AB7C3004ECA5F /* LocationDelegate.swift */; };
+		2BE888751A2ABCB4004ECA5F /* iiLocationActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888741A2ABCB4004ECA5F /* iiLocationActivityType.swift */; };
+		2BE888771A2AC1D8004ECA5F /* SliderControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888761A2AC1D8004ECA5F /* SliderControls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		2BE8886D1A2AAD41004ECA5F /* ControlsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsData.swift; sourceTree = "<group>"; };
 		2BE8886F1A2AB57B004ECA5F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2BE888721A2AB7C3004ECA5F /* LocationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
+		2BE888741A2ABCB4004ECA5F /* iiLocationActivityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iiLocationActivityType.swift; sourceTree = "<group>"; };
+		2BE888761A2AC1D8004ECA5F /* SliderControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderControls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 		2B331AF01A2A8FAA0070EE73 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2BE888741A2ABCB4004ECA5F /* iiLocationActivityType.swift */,
 				2BE888641A2AA6E2004ECA5F /* iiGeo.swift */,
 				2B74F8F91A2A93E200F036D2 /* iiLayout.swift */,
 				2B331AF11A2A8FB30070EE73 /* iiQ.swift */,
@@ -173,6 +178,7 @@
 			children = (
 				2BE8886D1A2AAD41004ECA5F /* ControlsData.swift */,
 				2B74F8F31A2A93AE00F036D2 /* ControlType.swift */,
+				2BE888761A2AC1D8004ECA5F /* SliderControls.swift */,
 				2B74F8F71A2A93C600F036D2 /* SliderControllerDelegate.swift */,
 				2B74F8F11A2A93A100F036D2 /* SliderControllerView.swift */,
 				2B74F8F51A2A93B400F036D2 /* SliderDefaults.swift */,
@@ -303,8 +309,10 @@
 				2BE888631A2AA6B2004ECA5F /* InitialMapZoom.swift in Sources */,
 				2B74F8F41A2A93AE00F036D2 /* ControlType.swift in Sources */,
 				2BE888651A2AA6E2004ECA5F /* iiGeo.swift in Sources */,
+				2BE888751A2ABCB4004ECA5F /* iiLocationActivityType.swift in Sources */,
 				2BE888731A2AB7C3004ECA5F /* LocationDelegate.swift in Sources */,
 				2B331ACF1A2A8E820070EE73 /* AppDelegate.swift in Sources */,
+				2BE888771A2AC1D8004ECA5F /* SliderControls.swift in Sources */,
 				2B74F8F81A2A93C600F036D2 /* SliderControllerDelegate.swift in Sources */,
 				2BE888701A2AB57B004ECA5F /* Location.swift in Sources */,
 				2BE8886E1A2AAD41004ECA5F /* ControlsData.swift in Sources */,

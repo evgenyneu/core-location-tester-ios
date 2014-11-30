@@ -13,16 +13,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-  let allControlsData = [
-    ControlType.accuracy:
+  let allControls = [ControlType:ControlData]()
+
+  let allControlsDataArray = [
     ControlData(
       type: ControlType.accuracy,
       defaults: SliderDefaults(value: 100, minimumValue: 0, maximumValue: 1000)
     ),
-    ControlType.distanceFilter:
+
     ControlData(
       type: ControlType.distanceFilter,
       defaults: SliderDefaults(value: 10, minimumValue: 0, maximumValue: 1000)
+    ),
+
+    ControlData(
+      type: ControlType.activityType,
+      defaults: SliderDefaults(value: 3, minimumValue: 0, maximumValue: 4),
+      step: 1
     )
   ]
 
@@ -31,10 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   override init() {
     super.init()
+
+    for data in allControlsDataArray {
+      allControls[data.type] = data
+    }
   }
 
   func controlValue(type: ControlType) -> Float {
-    if let sliderView = allControlsData[type]?.view {
+    if let sliderView = allControls[type]?.view {
       return sliderView.value
     }
 

@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uW-Qu-PBr">
-                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="rng-eV-JBp"/>
+                                    <constraint firstAttribute="height" constant="400" id="rng-eV-JBp"/>
                                 </constraints>
                             </mapView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-8i-VY1">
-                                <rect key="frame" x="0.0" y="364" width="600" height="236"/>
+                                <rect key="frame" x="0.0" y="464" width="600" height="136"/>
                                 <color key="backgroundColor" red="0.86437875032424927" green="1" blue="0.86056238412857056" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

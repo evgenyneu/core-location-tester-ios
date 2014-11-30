@@ -10,7 +10,7 @@
 import UIKit
 import MapKit
 
-private let iiMAP_SIZE_METERS:CLLocationDistance = 3_000
+private let iiMAP_SIZE_METERS:CLLocationDistance = 500
 
 class InitialMapZoom {
   class func zoomToLocation(mapView: MKMapView, coordinate: CLLocationCoordinate2D, animated: Bool) {

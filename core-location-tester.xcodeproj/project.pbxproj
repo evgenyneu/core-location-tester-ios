@@ -46,14 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B331AC91A2A8E820070EE73 /* location-update.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "location-update.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B331AC91A2A8E820070EE73 /* core-location-tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "core-location-tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B331ACD1A2A8E820070EE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B331ACE1A2A8E820070EE73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B331AD01A2A8E820070EE73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B331AD31A2A8E820070EE73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B331AD51A2A8E820070EE73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B331AD81A2A8E820070EE73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2B331ADE1A2A8E820070EE73 /* location-updateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "location-updateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B331ADE1A2A8E820070EE73 /* core-location-testerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "core-location-testerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B331AE31A2A8E820070EE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B331AE41A2A8E820070EE73 /* location_updateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location_updateTests.swift; sourceTree = "<group>"; };
 		2B331AEE1A2A8F130070EE73 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		2B331ACA1A2A8E820070EE73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B331AC91A2A8E820070EE73 /* location-update.app */,
-				2B331ADE1A2A8E820070EE73 /* location-updateTests.xctest */,
+				2B331AC91A2A8E820070EE73 /* core-location-tester.app */,
+				2B331ADE1A2A8E820070EE73 /* core-location-testerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,9 +209,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B331AC81A2A8E820070EE73 /* location-update */ = {
+		2B331AC81A2A8E820070EE73 /* core-location-tester */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B331AE81A2A8E820070EE73 /* Build configuration list for PBXNativeTarget "location-update" */;
+			buildConfigurationList = 2B331AE81A2A8E820070EE73 /* Build configuration list for PBXNativeTarget "core-location-tester" */;
 			buildPhases = (
 				2B331AC51A2A8E820070EE73 /* Sources */,
 				2B331AC61A2A8E820070EE73 /* Frameworks */,
@@ -221,14 +221,14 @@
 			);
 			dependencies = (
 			);
-			name = "location-update";
+			name = "core-location-tester";
 			productName = "location-update";
-			productReference = 2B331AC91A2A8E820070EE73 /* location-update.app */;
+			productReference = 2B331AC91A2A8E820070EE73 /* core-location-tester.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B331ADD1A2A8E820070EE73 /* location-updateTests */ = {
+		2B331ADD1A2A8E820070EE73 /* core-location-testerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B331AEB1A2A8E820070EE73 /* Build configuration list for PBXNativeTarget "location-updateTests" */;
+			buildConfigurationList = 2B331AEB1A2A8E820070EE73 /* Build configuration list for PBXNativeTarget "core-location-testerTests" */;
 			buildPhases = (
 				2B331ADA1A2A8E820070EE73 /* Sources */,
 				2B331ADB1A2A8E820070EE73 /* Frameworks */,
@@ -239,9 +239,9 @@
 			dependencies = (
 				2B331AE01A2A8E820070EE73 /* PBXTargetDependency */,
 			);
-			name = "location-updateTests";
+			name = "core-location-testerTests";
 			productName = "location-updateTests";
-			productReference = 2B331ADE1A2A8E820070EE73 /* location-updateTests.xctest */;
+			productReference = 2B331ADE1A2A8E820070EE73 /* core-location-testerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -262,7 +262,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B331AC41A2A8E820070EE73 /* Build configuration list for PBXProject "location-update" */;
+			buildConfigurationList = 2B331AC41A2A8E820070EE73 /* Build configuration list for PBXProject "core-location-tester" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -275,8 +275,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B331AC81A2A8E820070EE73 /* location-update */,
-				2B331ADD1A2A8E820070EE73 /* location-updateTests */,
+				2B331AC81A2A8E820070EE73 /* core-location-tester */,
+				2B331ADD1A2A8E820070EE73 /* core-location-testerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -342,7 +342,7 @@
 /* Begin PBXTargetDependency section */
 		2B331AE01A2A8E820070EE73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2B331AC81A2A8E820070EE73 /* location-update */;
+			target = 2B331AC81A2A8E820070EE73 /* core-location-tester */;
 			targetProxy = 2B331ADF1A2A8E820070EE73 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -452,7 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "location-update/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "core-location-tester";
 			};
 			name = Debug;
 		};
@@ -462,7 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "location-update/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "core-location-tester";
 			};
 			name = Release;
 		};
@@ -480,8 +480,8 @@
 				);
 				INFOPLIST_FILE = "location-updateTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/location-update.app/location-update";
+				PRODUCT_NAME = "core-location-testerTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/core-location-tester.app/core-location-tester";
 			};
 			name = Debug;
 		};
@@ -495,15 +495,15 @@
 				);
 				INFOPLIST_FILE = "location-updateTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/location-update.app/location-update";
+				PRODUCT_NAME = "core-location-testerTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/core-location-tester.app/core-location-tester";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B331AC41A2A8E820070EE73 /* Build configuration list for PBXProject "location-update" */ = {
+		2B331AC41A2A8E820070EE73 /* Build configuration list for PBXProject "core-location-tester" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B331AE61A2A8E820070EE73 /* Debug */,
@@ -512,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B331AE81A2A8E820070EE73 /* Build configuration list for PBXNativeTarget "location-update" */ = {
+		2B331AE81A2A8E820070EE73 /* Build configuration list for PBXNativeTarget "core-location-tester" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B331AE91A2A8E820070EE73 /* Debug */,
@@ -521,7 +521,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B331AEB1A2A8E820070EE73 /* Build configuration list for PBXNativeTarget "location-updateTests" */ = {
+		2B331AEB1A2A8E820070EE73 /* Build configuration list for PBXNativeTarget "core-location-testerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B331AEC1A2A8E820070EE73 /* Debug */,

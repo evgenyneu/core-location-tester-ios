@@ -13,6 +13,13 @@ import CoreLocation
 import MapKit
 
 class iiGeo {
+  class func distance(coordinateOne: CLLocationCoordinate2D, coordinateTwo: CLLocationCoordinate2D) -> CLLocationDistance {
+    let location = CLLocation(latitude: coordinateOne.latitude, longitude: coordinateOne.longitude)
+    let locationTwo = CLLocation(latitude: coordinateTwo.latitude, longitude: coordinateTwo.longitude)
+
+    return location.distanceFromLocation(locationTwo)
+  }
+
   class func degreesToRadians(degrees: Double) -> Double {
     return (degrees / 180) * M_PI
   }

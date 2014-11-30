@@ -43,6 +43,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WvO-Ux-XZi">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="jWJ-XP-8Rz">
+                            <connections>
+                                <action selector="onClearTapped:" destination="BYZ-38-t0r" id="pap-VN-2nY"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="fS1-yW-NxJ">
                             <connections>
                                 <segue destination="gDX-SE-e0D" kind="show" id="URm-wy-EDo"/>

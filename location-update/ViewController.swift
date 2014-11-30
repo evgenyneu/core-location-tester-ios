@@ -40,7 +40,6 @@ class ViewController: UIViewController, LocationDelegate {
       }
     }
 
-    lastPinLocation = coordinate
 
     if let currentAnnotation = annotation {
       mapView.removeAnnotation(currentAnnotation)
@@ -50,14 +49,26 @@ class ViewController: UIViewController, LocationDelegate {
     annotation =  MKCircle(centerCoordinate: coordinate, radius: 10)
     mapView.addAnnotation(annotation)
 
-    zoomToLocation(coordinate)
+
+    ViewController.zoomToLocation(mapView, coordinate: coordinate, previousCoordinate: lastPinLocation)
+
+    lastPinLocation = coordinate
   }
 
-  private func zoomToLocation(coordinate: CLLocationCoordinate2D) {
-    if zoomedToLocation { return }
-    zoomedToLocation = true
+  private class func zoomToLocation(mapView: MKMapView, coordinate: CLLocationCoordinate2D, previousCoordinate: CLLocationCoordinate2D?) {
+    var zoom = true
+    if let currentPreviousCoordinate = previousCoordinate {
+      let distance = iiGeo.distance(coordinate, coordinateTwo: currentPreviousCoordinate)
+      if distance < 5000 { zoom = false }
+    }
 
-    InitialMapZoom.zoomToLocation(mapView, coordinate: coordinate, animated: true)
+    if zoom {
+      InitialMapZoom.zoomToLocation(mapView, coordinate: coordinate, animated: true)
+    }
+  }
+
+  @IBAction func onClearTapped(sender: AnyObject) {
+    AppDelegate.current.log.clear()
   }
 }
 

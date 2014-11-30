@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B331AC81A2A8E820070EE73"
-               BuildableName = "location-update.app"
-               BlueprintName = "location-update"
-               ReferencedContainer = "container:location-update.xcodeproj">
+               BuildableName = "core-location-tester.app"
+               BlueprintName = "core-location-tester"
+               ReferencedContainer = "container:core-location-tester.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B331ADD1A2A8E820070EE73"
-               BuildableName = "location-updateTests.xctest"
-               BlueprintName = "location-updateTests"
-               ReferencedContainer = "container:location-update.xcodeproj">
+               BuildableName = "core-location-testerTests.xctest"
+               BlueprintName = "core-location-testerTests"
+               ReferencedContainer = "container:core-location-tester.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B331ADD1A2A8E820070EE73"
-               BuildableName = "location-updateTests.xctest"
-               BlueprintName = "location-updateTests"
-               ReferencedContainer = "container:location-update.xcodeproj">
+               BuildableName = "core-location-testerTests.xctest"
+               BlueprintName = "core-location-testerTests"
+               ReferencedContainer = "container:core-location-tester.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B331AC81A2A8E820070EE73"
-            BuildableName = "location-update.app"
-            BlueprintName = "location-update"
-            ReferencedContainer = "container:location-update.xcodeproj">
+            BuildableName = "core-location-tester.app"
+            BlueprintName = "core-location-tester"
+            ReferencedContainer = "container:core-location-tester.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B331AC81A2A8E820070EE73"
-            BuildableName = "location-update.app"
-            BlueprintName = "location-update"
-            ReferencedContainer = "container:location-update.xcodeproj">
+            BuildableName = "core-location-tester.app"
+            BlueprintName = "core-location-tester"
+            ReferencedContainer = "container:core-location-tester.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B331AC81A2A8E820070EE73"
-            BuildableName = "location-update.app"
-            BlueprintName = "location-update"
-            ReferencedContainer = "container:location-update.xcodeproj">
+            BuildableName = "core-location-tester.app"
+            BlueprintName = "core-location-tester"
+            ReferencedContainer = "container:core-location-tester.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

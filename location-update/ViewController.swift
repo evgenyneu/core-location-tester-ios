@@ -34,7 +34,7 @@ class ViewController: UIViewController, LocationDelegate {
       annotation = nil
     }
 
-    annotation =  MKCircle(centerCoordinate: coordinate, radius: 130)
+    annotation =  MKCircle(centerCoordinate: coordinate, radius: 10)
     mapView.addAnnotation(annotation)
 
     zoomToLocation(coordinate)

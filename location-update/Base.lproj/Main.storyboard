@@ -71,16 +71,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdB-M0-54E">
-                                <rect key="frame" x="16" y="72" width="568" height="528"/>
+                                <rect key="frame" x="36" y="84" width="528" height="444"/>
                                 <color key="backgroundColor" red="0.96899839880000005" green="0.79143895809999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3C-Zg-Iam">
+                                <rect key="frame" x="273" y="548" width="53" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Default">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDefaultTapped:" destination="gDX-SE-e0D" eventType="touchUpInside" id="xH0-UC-VlM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LdB-M0-54E" firstAttribute="top" secondItem="OlB-9U-wAZ" secondAttribute="bottom" constant="8" symbolic="YES" id="1rr-kz-oOt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LdB-M0-54E" secondAttribute="trailing" id="2Lh-R3-vbA"/>
-                            <constraint firstItem="LdB-M0-54E" firstAttribute="leading" secondItem="xvw-vJ-vnk" secondAttribute="leadingMargin" id="B2d-cf-lsy"/>
-                            <constraint firstItem="nFQ-Be-sLx" firstAttribute="top" secondItem="LdB-M0-54E" secondAttribute="bottom" id="gOK-Gc-glf"/>
+                            <constraint firstItem="LdB-M0-54E" firstAttribute="top" secondItem="OlB-9U-wAZ" secondAttribute="bottom" constant="20" id="1rr-kz-oOt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LdB-M0-54E" secondAttribute="trailing" constant="20" id="2Lh-R3-vbA"/>
+                            <constraint firstItem="LdB-M0-54E" firstAttribute="leading" secondItem="xvw-vJ-vnk" secondAttribute="leadingMargin" constant="20" id="B2d-cf-lsy"/>
+                            <constraint firstItem="L3C-Zg-Iam" firstAttribute="top" secondItem="LdB-M0-54E" secondAttribute="bottom" constant="20" id="KTu-fI-yoy"/>
+                            <constraint firstItem="nFQ-Be-sLx" firstAttribute="top" secondItem="L3C-Zg-Iam" secondAttribute="bottom" constant="20" id="bmX-GP-X8F"/>
+                            <constraint firstAttribute="centerX" secondItem="L3C-Zg-Iam" secondAttribute="centerX" id="sJ9-Ce-5iP"/>
                         </constraints>
                     </view>
                     <connections>

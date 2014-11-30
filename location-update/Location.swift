@@ -15,6 +15,10 @@ class Location: NSObject, CLLocationManagerDelegate {
 
   weak var delegate: LocationDelegate?
 
+  override init() {
+    super.init()
+  }
+
   func start() {
     locationManager.delegate = self
 
@@ -26,11 +30,10 @@ class Location: NSObject, CLLocationManagerDelegate {
   }
 
   private func startUpdatingLocation() {
+    locationManager.desiredAccuracy = CLLocationAccuracy(iiControlsStorage.value(ControlType.accuracy))
+    locationManager.distanceFilter = CLLocationDistance(iiControlsStorage.value(ControlType.distanceFilter))
 
-    locationManager.desiredAccuracy = CLLocationAccuracy(AppDelegate.current.controls.value(ControlType.accuracy))
-    locationManager.distanceFilter = CLLocationDistance(AppDelegate.current.controls.value(ControlType.distanceFilter))
-
-    if let activityType = CLActivityType(rawValue: Int(AppDelegate.current.controls.value(ControlType.activityType))) {
+    if let activityType = CLActivityType(rawValue: Int(iiControlsStorage.value(ControlType.activityType))) {
 
       locationManager.activityType = activityType
     }

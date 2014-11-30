@@ -12,14 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
- 
-  let controls = ControlsStorage()
+
   let log = Log()
   let location = Location()
 
   override init() {
     super.init()
-    controls.setup()
+    iiControlsStorage.setup()
   }
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

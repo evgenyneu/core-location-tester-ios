@@ -9,12 +9,29 @@
 import Foundation
 import CoreLocation
 
+let iiControlsStorage = ControlsStorage()
+
 class ControlsStorage {
-  var allArray = [ControlData]()
-  var all = [ControlType:ControlData]()
+  private(set) var allArray: [ControlData]
+  private(set) var all: [ControlType:ControlData]
+
+  init() {
+    allArray = [ControlData]()
+    all = [ControlType:ControlData]()
+  }
 
   func setup() {
-    var activityDefaults = SliderDefaults(value: 3, minimumValue: 1, maximumValue: 4)
+    allArray.append(ControlData(
+      type: ControlType.accuracy,
+      defaults: SliderDefaults(value: -1, minimumValue: -1, maximumValue: 1000)
+      ))
+
+    allArray.append(ControlData(
+      type: ControlType.distanceFilter,
+      defaults: SliderDefaults(value: -1, minimumValue: -1, maximumValue: 100)
+      ))
+
+    var activityDefaults = SliderDefaults(value: 1, minimumValue: 1, maximumValue: 4)
     activityDefaults.step = 1
 
     for i in (Int(activityDefaults.minimumValue)...Int(activityDefaults.maximumValue)) {
@@ -23,22 +40,11 @@ class ControlsStorage {
       }
     }
 
-    allArray = [
-      ControlData(
-        type: ControlType.accuracy,
-        defaults: SliderDefaults(value: 100, minimumValue: 0, maximumValue: 1000)
-      ),
+    allArray.append(ControlData(
+      type: ControlType.activityType,
+      defaults: activityDefaults
+      ))
 
-      ControlData(
-        type: ControlType.distanceFilter,
-        defaults: SliderDefaults(value: 10, minimumValue: 0, maximumValue: 100)
-      ),
-
-      ControlData(
-        type: ControlType.activityType,
-        defaults: activityDefaults
-      )
-    ]
 
     for data in allArray {
       all[data.type] = data
@@ -46,8 +52,12 @@ class ControlsStorage {
   }
 
   func value(type: ControlType) -> Float {
-    if let sliderView = all[type]?.view {
-      return sliderView.value
+    if let type = all[type] {
+      if let sliderView = type.view {
+        return sliderView.value
+      } else {
+        return type.defaults.value
+      }
     }
     
     return 0

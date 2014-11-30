@@ -39,8 +39,7 @@ class SliderControllerView: UIView {
     }
 
     saveValueInUserDefaults()
-    SliderControllerView.updateSliderLabel(slider, label: label, caption: type.rawValue,
-      valueNames: defaults.valueNames)
+    updateLabel()
   }
 
   var value: Float {
@@ -79,6 +78,10 @@ class SliderControllerView: UIView {
 
     saveValueInUserDefaults()
 
+    updateLabel()
+  }
+
+  private func updateLabel() {
     SliderControllerView.updateSliderLabel(slider, label: label, caption: type.rawValue,
       valueNames: defaults.valueNames)
   }
@@ -116,6 +119,12 @@ class SliderControllerView: UIView {
 
   private class func formatValue(value: Float) -> String {
     return String(format: "%.3f", value)
+  }
+
+  func resetToDefault() {
+    SliderDefaults.set(slider, defaults: defaults)
+    saveValueInUserDefaults()
+    updateLabel()
   }
 
   // User defauts

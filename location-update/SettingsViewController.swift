@@ -29,10 +29,16 @@ class SettingsViewController: UIViewController, SliderControllerDelegate {
   }
 
   private func createControls() {
-    SliderControls.create(AppDelegate.current.controls.allArray,
+    SliderControls.create(iiControlsStorage.allArray,
       delegate: self, superview: sliderParentView)
   }
 
+  @IBAction func onDefaultTapped(sender: AnyObject) {
+    for data in iiControlsStorage.allArray {
+      data.view?.resetToDefault()
+    }
+  }
+  
   override func willMoveToParentViewController(parent: UIViewController?) {
     super.willMoveToParentViewController(parent)
 

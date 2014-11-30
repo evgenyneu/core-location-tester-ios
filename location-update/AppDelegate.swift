@@ -13,11 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-  let iiAllControlsData = [
+  let allControlsData = [
+    ControlType.accuracy:
     ControlData(
       type: ControlType.accuracy,
       defaults: SliderDefaults(value: 100, minimumValue: 0, maximumValue: 1000)
     ),
+    ControlType.distanceFilter:
     ControlData(
       type: ControlType.distanceFilter,
       defaults: SliderDefaults(value: 10, minimumValue: 0, maximumValue: 1000)
@@ -27,12 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   let log = Log()
   let location = Location()
 
-
   override init() {
     super.init()
   }
 
+  func controlValue(type: ControlType) -> Float {
+    if let sliderView = allControlsData[type]?.view {
+      return sliderView.value
+    }
 
+    return 0
+  }
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.

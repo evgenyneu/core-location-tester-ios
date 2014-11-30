@@ -36,7 +36,7 @@ class Log {
 
   func add(text: String){
     iiQ.main {
-      self.setText("\(self.currentTime) \(text)\n\(self.text)")
+      self.setText("\(self.text)\n\(self.currentTime) \(text)")
     }
   }
 

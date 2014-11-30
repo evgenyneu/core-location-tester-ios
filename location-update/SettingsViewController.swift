@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController, SliderControllerDelegate {
   private func createControls() {
     var previousControl:SliderControllerView? = nil
 
-    for data in AppDelegate.current.iiAllControlsData {
+    for data in AppDelegate.current.allControlsData.values {
       let control = SliderControllerView(type: data.type,
         defaults: data.defaults, delegate: self)
 
@@ -62,7 +62,7 @@ class SettingsViewController: UIViewController, SliderControllerDelegate {
     super.willMoveToParentViewController(parent)
 
     if parent == nil {
-      println("Back pressed")
+      AppDelegate.current.location.restartUpdatingLocation()
     }
   }
 }

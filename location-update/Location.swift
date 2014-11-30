@@ -22,22 +22,26 @@ class Location: NSObject, CLLocationManagerDelegate {
       locationManager.requestAlwaysAuthorization()
     }
 
-    log.add("kCLLocationAccuracyBest \(kCLLocationAccuracyBest)")
-    log.add("desiredAccuracy \(locationManager.desiredAccuracy)")
+    startUpdatingLocation()
+  }
 
-    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+  private func startUpdatingLocation() {
 
-    log.add("kCLDistanceFilterNone \(kCLDistanceFilterNone)")
-    log.add("distanceFilter \(locationManager.distanceFilter)")
-
-    locationManager.distanceFilter = 10
-
-    log.add("CLActivityTypeOther \(CLActivityType.Other.rawValue)")
-    log.add("activityType \(locationManager.activityType.rawValue)")
-
+    locationManager.desiredAccuracy = CLLocationAccuracy(AppDelegate.current.controlValue(ControlType.accuracy))
+    locationManager.distanceFilter = CLLocationDistance(AppDelegate.current.controlValue(ControlType.distanceFilter))
     locationManager.activityType = CLActivityType.Fitness
 
+    log.add("Start updating location")
+    log.add("accuracy: \(locationManager.desiredAccuracy)")
+    log.add("distance filter: \(locationManager.distanceFilter)")
+    log.add("activity type: \(locationManager.activityType)")
+
     locationManager.startUpdatingLocation()
+  }
+
+  func restartUpdatingLocation() {
+    locationManager.stopUpdatingLocation()
+    startUpdatingLocation()
   }
 }
 

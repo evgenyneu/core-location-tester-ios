@@ -33,6 +33,12 @@ class SliderControllerView: UIView {
     configureSlider(slider)
 
     SliderDefaults.set(slider, defaults: defaults)
+
+    if let valueFromDetauls = userDefaultsValue {
+      slider.value = valueFromDetauls
+    }
+
+    saveValueInUserDefaults()
     SliderControllerView.updateSliderLabel(slider, label: label, caption: type.rawValue)
   }
 
@@ -67,8 +73,10 @@ class SliderControllerView: UIView {
   func sliderChanged(slider: UISlider) {
 
     if step != 0 {
-      slider.value = step * slider.value / step
+      slider.value = step * roundf(slider.value / step)
     }
+
+    saveValueInUserDefaults()
 
     SliderControllerView.updateSliderLabel(slider, label: label, caption: type.rawValue)
   }
@@ -97,5 +105,25 @@ class SliderControllerView: UIView {
 
   private class func formatValue(value: Float) -> String {
     return String(format: "%.3f", value)
+  }
+
+  // User defauts
+  // --------------------
+
+  private var defaultsKey: String {
+    return "Slider Value '\(type.rawValue)'"
+  }
+
+  private var userDefaultsValue: Float? {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    if let currentValue = userDefaults.objectForKey(defaultsKey) as? Float {
+      return currentValue
+    }
+    return nil
+  }
+
+  private func saveValueInUserDefaults() {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    userDefaults.setFloat(slider.value, forKey: defaultsKey)
   }
 }

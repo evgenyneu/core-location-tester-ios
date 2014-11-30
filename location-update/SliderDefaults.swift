@@ -13,6 +13,7 @@ struct SliderDefaults {
   let minimumValue: Float
   let maximumValue: Float
   var valueNames = [Float:String]()
+  var step:Float = 0
 
   init(value: Float, minimumValue: Float, maximumValue: Float) {
     self.value = value;

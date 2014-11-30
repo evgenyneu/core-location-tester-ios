@@ -16,7 +16,7 @@ class SliderControls {
 
     for data in all {
       let control = SliderControllerView(type: data.type,
-        defaults: data.defaults, delegate: delegate, step: data.step)
+        defaults: data.defaults, delegate: delegate)
 
       data.view = control
 

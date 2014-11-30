@@ -15,9 +15,9 @@ struct iiLocationActivityType {
     case .Fitness:
       return "Fitness"
     case .AutomotiveNavigation:
-      return "AutomotiveNavigation"
+      return "Automotive navigation"
     case .OtherNavigation:
-      return "OtherNavigation"
+      return "Other navigation"
     case .Other:
       return "Other"
     }

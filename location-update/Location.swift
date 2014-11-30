@@ -47,7 +47,10 @@ class Location: NSObject, CLLocationManagerDelegate {
 
   func restartUpdatingLocation() {
     locationManager.stopUpdatingLocation()
-    startUpdatingLocation()
+
+    iiQ.runAfterDelay(1) {
+      self.startUpdatingLocation()
+    }
   }
 }
 

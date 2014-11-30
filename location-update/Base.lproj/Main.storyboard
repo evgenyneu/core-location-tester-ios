@@ -26,7 +26,7 @@
                             </mapView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-8i-VY1">
                                 <rect key="frame" x="0.0" y="364" width="600" height="236"/>
-                                <color key="backgroundColor" red="0.82169866561889648" green="1" blue="0.82171863317489624" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.86437875032424927" green="1" blue="0.86056238412857056" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

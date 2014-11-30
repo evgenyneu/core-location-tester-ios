@@ -24,7 +24,6 @@
 		2BA436071A2A919700860EE5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA436061A2A919700860EE5 /* CoreLocation.framework */; };
 		2BE888631A2AA6B2004ECA5F /* InitialMapZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888621A2AA6B2004ECA5F /* InitialMapZoom.swift */; };
 		2BE888651A2AA6E2004ECA5F /* iiGeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888641A2AA6E2004ECA5F /* iiGeo.swift */; };
-		2BE888671A2AA868004ECA5F /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888661A2AA868004ECA5F /* Annotation.swift */; };
 		2BE888691A2AAA52004ECA5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BE888681A2AAA52004ECA5F /* Default-568h@2x.png */; };
 		2BE8886C1A2AAC59004ECA5F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8886B1A2AAC59004ECA5F /* SettingsViewController.swift */; };
 		2BE8886E1A2AAD41004ECA5F /* ControlsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8886D1A2AAD41004ECA5F /* ControlsData.swift */; };
@@ -67,7 +66,6 @@
 		2BA436061A2A919700860EE5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2BE888621A2AA6B2004ECA5F /* InitialMapZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMapZoom.swift; sourceTree = "<group>"; };
 		2BE888641A2AA6E2004ECA5F /* iiGeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iiGeo.swift; sourceTree = "<group>"; };
-		2BE888661A2AA868004ECA5F /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		2BE888681A2AAA52004ECA5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2BE8886B1A2AAC59004ECA5F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2BE8886D1A2AAD41004ECA5F /* ControlsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsData.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				2B74F8F01A2A939400F036D2 /* Slider controller */,
 				2B331AF01A2A8FAA0070EE73 /* Utils */,
 				2BE8886A1A2AAC47004ECA5F /* ViewControllers */,
-				2BE888661A2AA868004ECA5F /* Annotation.swift */,
 				2B331ACE1A2A8E820070EE73 /* AppDelegate.swift */,
 				2BE888781A2AC8FE004ECA5F /* ControlsStorage.swift */,
 				2BE888621A2AA6B2004ECA5F /* InitialMapZoom.swift */,
@@ -324,7 +321,6 @@
 				2B331AEF1A2A8F130070EE73 /* Log.swift in Sources */,
 				2BE888791A2AC8FE004ECA5F /* ControlsStorage.swift in Sources */,
 				2BE8886C1A2AAC59004ECA5F /* SettingsViewController.swift in Sources */,
-				2BE888671A2AA868004ECA5F /* Annotation.swift in Sources */,
 				2B331AF21A2A8FB30070EE73 /* iiQ.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

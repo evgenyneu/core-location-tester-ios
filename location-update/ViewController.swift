@@ -10,12 +10,12 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate, LocationDelegate {
+class ViewController: UIViewController, LocationDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
 
   @IBOutlet weak var textView: UITextView!
-  var overlay: Annotation?
+  var annotation: MKCircle?
 
   var zoomedToLocation = false
 
@@ -26,19 +26,16 @@ class ViewController: UIViewController, MKMapViewDelegate, LocationDelegate {
 
     AppDelegate.current.location.delegate = self
     AppDelegate.current.location.start()
-    mapView.delegate = self
   }
 
   private func updateOverlay(coordinate: CLLocationCoordinate2D) {
-    if let currentOverlay = overlay {
-      mapView.removeOverlay(overlay)
-      mapView.removeAnnotation(overlay)
-      overlay = nil
+    if let currentAnnotation = annotation {
+      mapView.removeAnnotation(currentAnnotation)
+      annotation = nil
     }
 
-    overlay = Annotation(centerCoordinate: coordinate, radius: 130)
-    mapView.addOverlay(overlay)
-    mapView.addAnnotation(overlay)
+    annotation =  MKCircle(centerCoordinate: coordinate, radius: 130)
+    mapView.addAnnotation(annotation)
 
     zoomToLocation(coordinate)
   }

@@ -15,6 +15,7 @@ class ControlsStorage {
 
   func setup() {
     var activityDefaults = SliderDefaults(value: 3, minimumValue: 1, maximumValue: 4)
+    activityDefaults.step = 1
 
     for i in (Int(activityDefaults.minimumValue)...Int(activityDefaults.maximumValue)) {
       if let currentActivityType = CLActivityType(rawValue: i) {
@@ -35,8 +36,7 @@ class ControlsStorage {
 
       ControlData(
         type: ControlType.activityType,
-        defaults: activityDefaults,
-        step: 1
+        defaults: activityDefaults
       )
     ]
 

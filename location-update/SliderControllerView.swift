@@ -14,16 +14,14 @@ class SliderControllerView: UIView {
   private let slider: UISlider!
   private let delegate: SliderControllerDelegate!
 
-  private let step: Float!
   private let defaults: SliderDefaults!
 
-  init(type: ControlType, defaults: SliderDefaults, delegate: SliderControllerDelegate, step: Float) {
+  init(type: ControlType, defaults: SliderDefaults, delegate: SliderControllerDelegate) {
 
     super.init()
 
     self.type = type
     self.delegate = delegate
-    self.step = step
     self.defaults = defaults
 
     setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -75,8 +73,8 @@ class SliderControllerView: UIView {
 
   func sliderChanged(slider: UISlider) {
 
-    if step != 0 {
-      slider.value = step * roundf(slider.value / step)
+    if defaults.step != 0 {
+      slider.value = defaults.step * roundf(slider.value / defaults.step)
     }
 
     saveValueInUserDefaults()

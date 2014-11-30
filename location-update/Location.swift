@@ -49,7 +49,6 @@ class Location: NSObject, CLLocationManagerDelegate {
   }
 
   func restartUpdatingLocation() {
-    log.clear()
     locationManager.stopUpdatingLocation()
 
     iiQ.runAfterDelay(1) {

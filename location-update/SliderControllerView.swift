@@ -15,6 +15,7 @@ class SliderControllerView: UIView {
   private let delegate: SliderControllerDelegate!
 
   private let step: Float!
+  private let defaults: SliderDefaults!
 
   init(type: ControlType, defaults: SliderDefaults, delegate: SliderControllerDelegate, step: Float) {
 
@@ -23,6 +24,7 @@ class SliderControllerView: UIView {
     self.type = type
     self.delegate = delegate
     self.step = step
+    self.defaults = defaults
 
     setTranslatesAutoresizingMaskIntoConstraints(false)
 
@@ -39,7 +41,8 @@ class SliderControllerView: UIView {
     }
 
     saveValueInUserDefaults()
-    SliderControllerView.updateSliderLabel(slider, label: label, caption: type.rawValue)
+    SliderControllerView.updateSliderLabel(slider, label: label, caption: type.rawValue,
+      valueNames: defaults.valueNames)
   }
 
   var value: Float {
@@ -78,15 +81,25 @@ class SliderControllerView: UIView {
 
     saveValueInUserDefaults()
 
-    SliderControllerView.updateSliderLabel(slider, label: label, caption: type.rawValue)
+    SliderControllerView.updateSliderLabel(slider, label: label, caption: type.rawValue,
+      valueNames: defaults.valueNames)
   }
 
   func sliderChangeEnded(slider: UISlider) {
     delegate.sliderControllerDelegate_OnChangeEnded()
   }
 
-  private class func updateSliderLabel(slider: UISlider, label: UILabel, caption: String) {
-    label.text = "\(caption): \(formatValue(slider.value))"
+  private class func updateSliderLabel(slider: UISlider, label: UILabel, caption: String,
+    valueNames: [Float: String]) {
+
+    var value = ""
+    if let valueName = valueNames[slider.value] {
+      value = "\(valueName)"
+    } else {
+      value = formatValue(slider.value)
+    }
+
+    label.text = "\(caption): \(value)"
   }
 
   override init(frame: CGRect) {

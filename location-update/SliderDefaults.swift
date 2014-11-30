@@ -12,6 +12,13 @@ struct SliderDefaults {
   let value: Float
   let minimumValue: Float
   let maximumValue: Float
+  var valueNames = [Float:String]()
+
+  init(value: Float, minimumValue: Float, maximumValue: Float) {
+    self.value = value;
+    self.minimumValue = minimumValue
+    self.maximumValue = maximumValue
+  }
 
   static func set(slider: UISlider, defaults: SliderDefaults) {
     slider.minimumValue = defaults.minimumValue

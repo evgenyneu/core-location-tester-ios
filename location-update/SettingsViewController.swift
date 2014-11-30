@@ -29,7 +29,7 @@ class SettingsViewController: UIViewController, SliderControllerDelegate {
   }
 
   private func createControls() {
-    SliderControls.create(AppDelegate.current.allControlsDataArray,
+    SliderControls.create(AppDelegate.current.controls.allArray,
       delegate: self, superview: sliderParentView)
   }
 

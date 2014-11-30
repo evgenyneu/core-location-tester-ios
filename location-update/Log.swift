@@ -67,6 +67,7 @@ class Log {
 
   func clear() {
     iiQ.main {
+      self.textView?.contentOffset = CGPoint()
       self.setText("")
     }
   }

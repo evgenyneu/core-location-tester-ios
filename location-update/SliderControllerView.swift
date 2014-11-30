@@ -131,19 +131,14 @@ class SliderControllerView: UIView {
   // --------------------
 
   private var defaultsKey: String {
-    return "Slider Value '\(type.rawValue)'"
+    return  SliderControlUserDefaults.keyName(type)
   }
 
   private var userDefaultsValue: Float? {
-    let userDefaults = NSUserDefaults.standardUserDefaults()
-    if let currentValue = userDefaults.objectForKey(defaultsKey) as? Float {
-      return currentValue
-    }
-    return nil
+    return SliderControlUserDefaults.value(type)
   }
 
   private func saveValueInUserDefaults() {
-    let userDefaults = NSUserDefaults.standardUserDefaults()
-    userDefaults.setFloat(slider.value, forKey: defaultsKey)
+    SliderControlUserDefaults.saveValue(slider.value, type: type)
   }
 }

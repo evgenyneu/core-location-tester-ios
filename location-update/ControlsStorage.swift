@@ -45,11 +45,14 @@ class ControlsStorage {
   }
 
   func value(type: ControlType) -> Float {
-    if let type = all[type] {
-      if let sliderView = type.view {
+    if let data = all[type] {
+      if let sliderView = data.view {
         return sliderView.value
       } else {
-        return type.defaults.value
+        if let currentSavedValue = SliderControlUserDefaults.value(type) {
+          return currentSavedValue
+        }
+        return data.defaults.value
       }
     }
     

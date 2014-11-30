@@ -19,6 +19,8 @@ class ViewController: UIViewController, LocationDelegate {
 
   var zoomedToLocation = false
 
+  var lastPinLocation: CLLocationCoordinate2D?
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -28,7 +30,18 @@ class ViewController: UIViewController, LocationDelegate {
     AppDelegate.current.location.start()
   }
 
-  private func updateOverlay(coordinate: CLLocationCoordinate2D) {
+  private func updatePin(coordinate: CLLocationCoordinate2D) {
+    if let currentLastPinLocation = lastPinLocation {
+      if currentLastPinLocation.latitude == coordinate.latitude &&
+        currentLastPinLocation.longitude == coordinate.longitude
+      {
+        // Pin did not move - no need to update
+        return
+      }
+    }
+
+    lastPinLocation = coordinate
+
     if let currentAnnotation = annotation {
       mapView.removeAnnotation(currentAnnotation)
       annotation = nil
@@ -55,7 +68,7 @@ typealias LocationDelegate_implementation = ViewController
 
 extension LocationDelegate_implementation {
   func locationUpdated(coordinate: CLLocationCoordinate2D) {
-    updateOverlay(coordinate)
+    updatePin(coordinate)
   }
 }
 

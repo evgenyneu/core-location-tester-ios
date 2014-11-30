@@ -32,6 +32,7 @@
 		2BE888751A2ABCB4004ECA5F /* iiLocationActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888741A2ABCB4004ECA5F /* iiLocationActivityType.swift */; };
 		2BE888771A2AC1D8004ECA5F /* SliderControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888761A2AC1D8004ECA5F /* SliderControls.swift */; };
 		2BE888791A2AC8FE004ECA5F /* ControlsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888781A2AC8FE004ECA5F /* ControlsStorage.swift */; };
+		2BF042491A2ADC2A00E71EE8 /* SliderControlUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF042481A2ADC2A00E71EE8 /* SliderControlUserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		2BE888741A2ABCB4004ECA5F /* iiLocationActivityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iiLocationActivityType.swift; sourceTree = "<group>"; };
 		2BE888761A2AC1D8004ECA5F /* SliderControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderControls.swift; sourceTree = "<group>"; };
 		2BE888781A2AC8FE004ECA5F /* ControlsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsStorage.swift; sourceTree = "<group>"; };
+		2BF042481A2ADC2A00E71EE8 /* SliderControlUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderControlUserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				2B74F8F71A2A93C600F036D2 /* SliderControllerDelegate.swift */,
 				2B74F8F11A2A93A100F036D2 /* SliderControllerView.swift */,
 				2B74F8F51A2A93B400F036D2 /* SliderDefaults.swift */,
+				2BF042481A2ADC2A00E71EE8 /* SliderControlUserDefaults.swift */,
 			);
 			name = "Slider controller";
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				2BE888701A2AB57B004ECA5F /* Location.swift in Sources */,
 				2BE8886E1A2AAD41004ECA5F /* ControlsData.swift in Sources */,
 				2B74F8F21A2A93A100F036D2 /* SliderControllerView.swift in Sources */,
+				2BF042491A2ADC2A00E71EE8 /* SliderControlUserDefaults.swift in Sources */,
 				2B74F8F61A2A93B400F036D2 /* SliderDefaults.swift in Sources */,
 				2B331AEF1A2A8F130070EE73 /* Log.swift in Sources */,
 				2BE888791A2AC8FE004ECA5F /* ControlsStorage.swift in Sources */,

@@ -61,11 +61,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
   private func updateOverlay(coordinate: CLLocationCoordinate2D) {
     if let currentOverlay = overlay {
       mapView.removeOverlay(overlay)
+      mapView.removeAnnotation(overlay)
       overlay = nil
     }
 
     overlay = Annotation(centerCoordinate: coordinate, radius: 130)
     mapView.addOverlay(overlay)
+    mapView.addAnnotation(overlay)
 
     zoomToLocation(coordinate)
   }

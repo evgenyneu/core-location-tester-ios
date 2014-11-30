@@ -22,7 +22,12 @@ class Log {
 
   private func setText(text: String) {
     if let currentTextView = textView {
+      let oldOffset = currentTextView.contentOffset
       currentTextView.text = text
+
+      iiQ.runAfterDelay(0.001) {
+        currentTextView.contentOffset = oldOffset
+      }
     }
   }
 
@@ -36,7 +41,13 @@ class Log {
 
   func add(text: String){
     iiQ.main {
-      self.setText("\(self.text)\n\(self.currentTime) \(text)")
+      var newText = self.text
+      if countElements(newText) > 0 {
+        newText += "\n"
+      }
+      newText += "\(self.currentTime) \(text)"
+      
+      self.setText(newText)
     }
   }
 

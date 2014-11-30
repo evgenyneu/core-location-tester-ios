@@ -29,12 +29,12 @@ class SettingsViewController: UIViewController, SliderControllerDelegate {
   }
 
   private func createControls() {
-    SliderControls.create(iiControlsStorage.allArray,
+    SliderControls.create(AppDelegate.current.controls.allArray,
       delegate: self, superview: sliderParentView)
   }
 
   @IBAction func onDefaultTapped(sender: AnyObject) {
-    for data in iiControlsStorage.allArray {
+    for data in AppDelegate.current.controls.allArray {
       data.view?.resetToDefault()
     }
   }

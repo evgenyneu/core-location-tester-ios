@@ -9,16 +9,9 @@
 import Foundation
 import CoreLocation
 
-let iiControlsStorage = ControlsStorage()
-
 class ControlsStorage {
-  private(set) var allArray: [ControlData]
-  private(set) var all: [ControlType:ControlData]
-
-  init() {
-    allArray = [ControlData]()
-    all = [ControlType:ControlData]()
-  }
+  private(set) var allArray = [ControlData]()
+  private(set) var all = [ControlType:ControlData]()
 
   func setup() {
     allArray.append(ControlData(

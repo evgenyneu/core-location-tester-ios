@@ -30,10 +30,10 @@ class Location: NSObject, CLLocationManagerDelegate {
   }
 
   private func startUpdatingLocation() {
-    locationManager.desiredAccuracy = CLLocationAccuracy(iiControlsStorage.value(ControlType.accuracy))
-    locationManager.distanceFilter = CLLocationDistance(iiControlsStorage.value(ControlType.distanceFilter))
+    locationManager.desiredAccuracy = CLLocationAccuracy(AppDelegate.current.controls.value(ControlType.accuracy))
+    locationManager.distanceFilter = CLLocationDistance(AppDelegate.current.controls.value(ControlType.distanceFilter))
 
-    if let activityType = CLActivityType(rawValue: Int(iiControlsStorage.value(ControlType.activityType))) {
+    if let activityType = CLActivityType(rawValue: Int(AppDelegate.current.controls.value(ControlType.activityType))) {
 
       locationManager.activityType = activityType
     }
@@ -49,6 +49,7 @@ class Location: NSObject, CLLocationManagerDelegate {
   }
 
   func restartUpdatingLocation() {
+    log.clear()
     locationManager.stopUpdatingLocation()
 
     iiQ.runAfterDelay(1) {
@@ -68,7 +69,7 @@ extension CLLocationManagerDelegate_implementation {
       if let currentLocation = location as? CLLocation {
         let elapsed = NSDate().timeIntervalSinceDate(currentLocation.timestamp)
         if elapsed > 1 {
-          log.add("LARGE elapsed \(elapsed)")
+          log.add("ignoring old location update: \(elapsed) sec ago")
           return
         } // process only recent timestamps
 

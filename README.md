@@ -2,7 +2,7 @@
 
 This demo app tests Core Location accuracy. It allows to change 'Accuracy', 'Distance Filter' and 'Activity Type' parameters of Location Manager and see how it affects accuracy of detected location.
 
-I created this app in order to understand the accuracy of location detection on different devices with different connectivity options. It also allows to check, for example, how turning WiFi on and off affects the accuracy (and it does).
+I created this app in order to understand the accuracy of location detection on different devices with different connectivity options. For example, I was wondering how the presence of WiFi networks affects the accuracy.
 
 <img src='https://github.com/evgenyneu/core-location-tester-ios/blob/master/graphics/core-location-tester-ios.png' alt='core location accuracy tester app iOS accuracy' width='414'>
 

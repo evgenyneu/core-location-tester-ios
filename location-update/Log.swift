@@ -22,11 +22,25 @@ class Log {
 
   private func setText(text: String) {
     if let currentTextView = textView {
-      let oldOffset = currentTextView.contentOffset
+      var oldOffset = currentTextView.contentOffset
+
+      let distanceToBottomLine = (currentTextView.contentSize.height - oldOffset.y)
+        - currentTextView.bounds.height
+
+      println("Content height before \(currentTextView.contentSize.height)")
       currentTextView.text = text
 
-      iiQ.runAfterDelay(0.001) {
-        currentTextView.contentOffset = oldOffset
+      iiQ.runAfterDelay(0.0001) {
+
+        if abs(distanceToBottomLine) < 10 { // scrolled to the bottom - preserve it
+          if currentTextView.bounds.height < currentTextView.contentSize.height {
+            let newOffset = (currentTextView.contentSize.height - currentTextView.bounds.height)
+
+            currentTextView.contentOffset = CGPoint(x: 0, y: newOffset)
+          }
+        } else {
+          currentTextView.contentOffset = oldOffset
+        }
       }
     }
   }

@@ -4,4 +4,6 @@ This demo app tests Core Location accuracy. It allows to change 'Accuracy', 'Dis
 
 I created this app in order to understand the accuracy of location detection on different devices. It also allows to check, for example, how turning WiFi on and off affects the accuracy (and it does).
 
-<img src='https://github.com/evgenyneu/core-location-tester-ios/blob/master/graphics/core-location-tester-ios-1.png' alt='core location accuracy tester app iOS' width='320'> <img src='https://raw.githubusercontent.com/evgenyneu/core-location-tester-ios/master/graphics/core-location-tester-ios-2.png' alt='iOS demo app for testing core location' width='320'>
+<img src='https://github.com/evgenyneu/core-location-tester-ios/blob/master/graphics/core-location-tester-ios.png' alt='core location accuracy tester app iOS' width='414'>
+
+<img src='https://raw.githubusercontent.com/evgenyneu/core-location-tester-ios/master/graphics/core-location-tester-ios-2.png' alt='iOS demo app for testing core location' width='414'>

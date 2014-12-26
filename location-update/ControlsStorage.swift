@@ -58,4 +58,12 @@ class ControlsStorage {
     
     return 0
   }
+
+  func setValue(type: ControlType, value: Float) {
+    if let data = all[type] {
+      if let sliderView = data.view {
+        sliderView.setValue(value)
+      }
+    }
+  }
 }

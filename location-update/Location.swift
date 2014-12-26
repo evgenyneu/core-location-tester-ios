@@ -29,7 +29,7 @@ class Location: NSObject, CLLocationManagerDelegate {
     startUpdatingLocation()
   }
 
-  private func startUpdatingLocation() {
+  func updateLocationSettings() {
     locationManager.desiredAccuracy = CLLocationAccuracy(AppDelegate.current.controls.value(ControlType.accuracy))
     locationManager.distanceFilter = CLLocationDistance(AppDelegate.current.controls.value(ControlType.distanceFilter))
 
@@ -38,13 +38,15 @@ class Location: NSObject, CLLocationManagerDelegate {
       locationManager.activityType = activityType
     }
 
-    log.add("Start updating location")
     log.add("accuracy: \(locationManager.desiredAccuracy)")
     log.add("distance filter: \(locationManager.distanceFilter)")
-
     let activityType = iiLocationActivityType.toString(locationManager.activityType)
     log.add("activity type: \(activityType)")
+  }
 
+  private func startUpdatingLocation() {
+    updateLocationSettings()
+    log.add("Start updating location")
     locationManager.startUpdatingLocation()
   }
 

@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-
+import CoreLocation
 
 class SettingsViewController: UIViewController, SliderControllerDelegate {
 
@@ -39,6 +38,21 @@ class SettingsViewController: UIViewController, SliderControllerDelegate {
     }
   }
   
+  @IBAction func onBestForNavigationTapped(sender: AnyObject) {
+    AppDelegate.current.controls.setValue(ControlType.accuracy,
+      value: Float(kCLLocationAccuracyBestForNavigation))
+  }
+
+  @IBAction func on10mTapped(sender: AnyObject) {
+    AppDelegate.current.controls.setValue(ControlType.accuracy,
+      value: Float(kCLLocationAccuracyNearestTenMeters))
+  }
+
+  @IBAction func on100mTapped(sender: AnyObject) {
+    AppDelegate.current.controls.setValue(ControlType.accuracy,
+      value: Float(kCLLocationAccuracyHundredMeters))
+  }
+
   override func willMoveToParentViewController(parent: UIViewController?) {
     super.willMoveToParentViewController(parent)
 

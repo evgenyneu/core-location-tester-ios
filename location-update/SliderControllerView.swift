@@ -127,6 +127,12 @@ class SliderControllerView: UIView {
     updateLabel()
   }
 
+  func setValue(value: Float) {
+    slider.value = value
+    saveValueInUserDefaults()
+    updateLabel()
+  }
+
   // User defauts
   // --------------------
 

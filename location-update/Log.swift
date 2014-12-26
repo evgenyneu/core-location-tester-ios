@@ -27,7 +27,6 @@ class Log {
       let distanceToBottomLine = (currentTextView.contentSize.height - oldOffset.y)
         - currentTextView.bounds.height
 
-      println("Content height before \(currentTextView.contentSize.height)")
       currentTextView.text = text
 
       iiQ.runAfterDelay(0.0001) {

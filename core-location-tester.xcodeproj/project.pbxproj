@@ -22,6 +22,7 @@
 		2B74F8FA1A2A93E200F036D2 /* iiLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B74F8F91A2A93E200F036D2 /* iiLayout.swift */; };
 		2B74F8FC1A2AA43700F036D2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B74F8FB1A2AA43700F036D2 /* MapKit.framework */; };
 		2BA436071A2A919700860EE5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA436061A2A919700860EE5 /* CoreLocation.framework */; };
+		2BBF00011A4F87B6004C4E03 /* iiCLErrorToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF00001A4F87B6004C4E03 /* iiCLErrorToString.swift */; };
 		2BE888631A2AA6B2004ECA5F /* InitialMapZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888621A2AA6B2004ECA5F /* InitialMapZoom.swift */; };
 		2BE888651A2AA6E2004ECA5F /* iiGeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE888641A2AA6E2004ECA5F /* iiGeo.swift */; };
 		2BE888691A2AAA52004ECA5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BE888681A2AAA52004ECA5F /* Default-568h@2x.png */; };
@@ -65,6 +66,7 @@
 		2B74F8F91A2A93E200F036D2 /* iiLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iiLayout.swift; sourceTree = "<group>"; };
 		2B74F8FB1A2AA43700F036D2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2BA436061A2A919700860EE5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2BBF00001A4F87B6004C4E03 /* iiCLErrorToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iiCLErrorToString.swift; sourceTree = "<group>"; };
 		2BE888621A2AA6B2004ECA5F /* InitialMapZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMapZoom.swift; sourceTree = "<group>"; };
 		2BE888641A2AA6E2004ECA5F /* iiGeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iiGeo.swift; sourceTree = "<group>"; };
 		2BE888681A2AAA52004ECA5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -167,9 +169,10 @@
 		2B331AF01A2A8FAA0070EE73 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				2BE888741A2ABCB4004ECA5F /* iiLocationActivityType.swift */,
+				2BBF00001A4F87B6004C4E03 /* iiCLErrorToString.swift */,
 				2BE888641A2AA6E2004ECA5F /* iiGeo.swift */,
 				2B74F8F91A2A93E200F036D2 /* iiLayout.swift */,
+				2BE888741A2ABCB4004ECA5F /* iiLocationActivityType.swift */,
 				2B331AF11A2A8FB30070EE73 /* iiQ.swift */,
 			);
 			name = Utils;
@@ -255,6 +258,11 @@
 				TargetAttributes = {
 					2B331AC81A2A8E820070EE73 = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					2B331ADD1A2A8E820070EE73 = {
 						CreatedOnToolsVersion = 6.1;
@@ -322,6 +330,7 @@
 				2B74F8F21A2A93A100F036D2 /* SliderControllerView.swift in Sources */,
 				2BF042491A2ADC2A00E71EE8 /* SliderControlUserDefaults.swift in Sources */,
 				2B74F8F61A2A93B400F036D2 /* SliderDefaults.swift in Sources */,
+				2BBF00011A4F87B6004C4E03 /* iiCLErrorToString.swift in Sources */,
 				2B331AEF1A2A8F130070EE73 /* Log.swift in Sources */,
 				2BE888791A2AC8FE004ECA5F /* ControlsStorage.swift in Sources */,
 				2BE8886C1A2AAC59004ECA5F /* SettingsViewController.swift in Sources */,

@@ -66,17 +66,29 @@ typealias CLLocationManagerDelegate_implementation = Location
 
 extension CLLocationManagerDelegate_implementation {
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+
+    if locations.count > 1 {
+      log.add("Number of location in one update \(locations.count)")
+    }
+
     for location in locations {
       if let currentLocation = location as? CLLocation {
         let elapsed = NSDate().timeIntervalSinceDate(currentLocation.timestamp)
+        var oldUpdate = ""
         if elapsed > 1 {
-          log.add("ignoring old location update: \(elapsed) sec ago")
-          return
+          oldUpdate = " Old data (\(elapsed) sec ago)"
         } // process only recent timestamps
 
         delegate?.locationUpdated(currentLocation.coordinate)
-        log.add("\(Log.coordToString(currentLocation)) accuracy: \(currentLocation.horizontalAccuracy)")
+        log.add("\(Log.coordToString(currentLocation)) accuracy: \(currentLocation.horizontalAccuracy) \(oldUpdate)")
       }
     }
+  }
+
+  func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    let title = "Location Error"
+    let message = iiCLErrorToString.toString(error.code) + " " + error.description
+
+    log.add("\(title) \(message)")
   }
 }
